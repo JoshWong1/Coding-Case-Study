@@ -44,9 +44,9 @@ function load() {
   } else {
     num = id + "/";
   }
-  var queryParams = new URLSearchParams(window.location.search);
-  queryParams.set("pg", id);
-  history.replaceState(null, null, "?" + queryParams.toString());
+  //var queryParams = new URLSearchParams(window.location.search);
+  //queryParams.set("pg", id);
+  //history.replaceState(null, null, "?" + queryParams.toString());
   // Open a new connection, using the GET request on the URL endpoint
   request.open("GET", "https://xkcd.com/" + num + "info.0.json", true);
 
