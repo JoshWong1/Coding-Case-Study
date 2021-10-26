@@ -1,0 +1,20 @@
+body {
+  background-color: black;
+}
+.main {
+  border-radius: 25px;
+  padding: 20px;
+  text-align: center;
+  color: black;
+  background-color: white;
+}
+.text {
+  display: inline-block;
+  text-align: left;
+  font-family: arial;
+}
+
+.error {
+  color: black;
+  text-align: left;
+}
