@@ -11,7 +11,7 @@ d.className = "text";
 var id = 0;
 
 title.textContent = "Cyber City Comics";
-transcript.setAttribute("style", "white-space: pre;");
+//transcript.setAttribute("style", "white-space: pre;");
 transcript.className = "text";
 br.textContent = "";
 next.name = "Next";
