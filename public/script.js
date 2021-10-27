@@ -11,7 +11,6 @@ d.className = "text";
 var id = 0;
 
 title.textContent = "Cyber City Comics";
-//transcript.setAttribute("style", "white-space: pre;");
 transcript.className = "text";
 br.textContent = "";
 next.name = "Next";
@@ -48,11 +47,7 @@ function load() {
   queryParams.set("pg", id);
   history.replaceState(null, null, "?" + queryParams.toString());
   // Open a new connection, using the GET request on the URL endpoint
-  request.open(
-    "GET",
-    "http://localhost:8080/https://xkcd.com/" + num + "info.0.json",
-    true
-  );
+  request.open("GET", "https://xkcd.com/" + num + "info.0.json", true);
 
   request.onload = function () {
     if (request.status < 200 || request.status >= 400) {
