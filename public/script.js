@@ -3,23 +3,23 @@ const title = document.createElement("h1");
 const img = document.createElement("img");
 const next = document.createElement("button");
 const prev = document.createElement("button");
-const p1 = document.createElement("p");
+const date = document.createElement("p");
 const transcript = document.createElement("p");
 const br = document.createElement("p");
-const d = document.createElement("div");
-d.className = "text";
+const textDiv = document.createElement("div");
 var id = 0;
 
+textDiv.className = "text";
 title.textContent = "Cyber City Comics";
 transcript.className = "text";
 br.textContent = "";
-next.name = "Next";
+
 next.textContent = "Next";
 next.onclick = function (event) {
   id += 1;
   load();
 };
-prev.name = "Prev";
+
 prev.textContent = "Previous";
 prev.onclick = function (event) {
   id -= 1;
@@ -53,13 +53,13 @@ function load() {
     if (request.status < 200 || request.status >= 400) {
       window.alert("Invalid page number");
     } else {
-      // Begin accessing JSON data here
+      // Begin accessing JSON data
       var data = JSON.parse(this.response);
 
       img.src = data.img;
       img.alt = data.alt;
-      date = data.month + "/" + data.day + "/" + data.year;
-      p1.textContent = "Date released: " + date;
+      date.textContent =
+        "Date released: " + data.month + "/" + data.day + "/" + data.year;
       transcript.textContent = data.transcript.replace(/[\[\]{()}]/g, "");
 
       app.appendChild(title);
@@ -71,9 +71,9 @@ function load() {
       if (id <= 0) {
         app.removeChild(prev);
       }
-      app.appendChild(p1);
-      app.appendChild(d);
-      d.appendChild(transcript);
+      app.appendChild(date);
+      app.appendChild(textDiv);
+      textDiv.appendChild(transcript);
     }
   };
 
